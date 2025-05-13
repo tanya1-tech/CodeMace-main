@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary brand color */
+  --primary: 24, 100%, 50%;
+  --primary-foreground: 0, 0%, 100%;
+
+  /* Secondary color - teal */
+  --secondary: 174, 75%, 40%;
+  --secondary-foreground: 0, 0%, 100%;
+
+  /* Accent color - purple */
+  --accent: 262, 83%, 58%;
+  --accent-foreground: 0, 0%, 100%;
+
+  /* Success color - green */
+  --success: 142, 71%, 45%;
+  --success-foreground: 0, 0%, 100%;
+
+  /* Warning color - amber */
+  --warning: 45, 93%, 47%;
+  --warning-foreground: 0, 0%, 10%;
+
+  /* Danger color - red */
+  --destructive: 0, 84%, 60%;
+  --destructive-foreground: 0, 0%, 100%;
+
+  /* Base UI colors */
+  --background: 0, 0%, 100%;
+  --foreground: 0, 0%, 10%;
+  --muted: 0, 0%, 96%;
+  --muted-foreground: 0, 0%, 45%;
+  --card: 0, 0%, 100%;
+  --card-foreground: 0, 0%, 10%;
+  --popover: 0, 0%, 100%;
+  --popover-foreground: 0, 0%, 10%;
+  --border: 0, 0%, 90%;
+  --input: 0, 0%, 90%;
+  --ring: 24, 100%, 50%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0, 0%, 10%;
+  --foreground: 0, 0%, 98%;
+  --muted: 0, 0%, 15%;
+  --muted-foreground: 0, 0%, 75%; /* Increased brightness for better visibility */
+  --card: 0, 0%, 15%;
+  --card-foreground: 0, 0%, 98%;
+  --popover: 0, 0%, 15%;
+  --popover-foreground: 0, 0%, 98%;
+  --border: 0, 0%, 25%; /* Slightly brighter border */
+  --input: 0, 0%, 20%;
+
+  /* Ensure primary colors have good contrast in dark mode */
+  --primary: 24, 100%, 60%; /* Brighter orange for dark mode */
+  --secondary: 174, 75%, 50%; /* Brighter teal for dark mode */
+  --accent: 262, 83%, 68%; /* Brighter purple for dark mode */
+  --success: 142, 71%, 55%; /* Brighter green for dark mode */
+  --warning: 45, 93%, 57%; /* Brighter amber for dark mode */
+  --destructive: 0, 84%, 70%; /* Brighter red for dark mode */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(24, 100%, 50%) 0%, hsl(36, 100%, 50%) 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, hsl(174, 75%, 40%) 0%, hsl(180, 75%, 45%) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(280, 83%, 58%) 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, hsl(142, 71%, 45%) 0%, hsl(160, 71%, 45%) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, hsl(24, 100%, 50%) 0%, hsl(262, 83%, 58%) 100%);
+}
+
+/* Add dark mode specific gradient backgrounds */
+.dark .gradient-primary {
+  background: linear-gradient(135deg, hsl(24, 100%, 60%) 0%, hsl(36, 100%, 60%) 100%);
+}
+
+.dark .gradient-secondary {
+  background: linear-gradient(135deg, hsl(174, 75%, 50%) 0%, hsl(180, 75%, 55%) 100%);
+}
+
+.dark .gradient-accent {
+  background: linear-gradient(135deg, hsl(262, 83%, 68%) 0%, hsl(280, 83%, 68%) 100%);
+}
+
+.dark .gradient-success {
+  background: linear-gradient(135deg, hsl(142, 71%, 55%) 0%, hsl(160, 71%, 55%) 100%);
+}
+
+.dark .gradient-hero {
+  background: linear-gradient(135deg, hsl(24, 100%, 60%) 0%, hsl(262, 83%, 68%) 100%);
+}
+
+/* Dark mode card backgrounds */
+.dark .bg-gradient-to-br.from-orange-50.to-amber-100 {
+  background: linear-gradient(to bottom right, hsl(24, 30%, 20%), hsl(36, 30%, 25%));
+}
+
+.dark .bg-gradient-to-br.from-cyan-50.to-teal-100 {
+  background: linear-gradient(to bottom right, hsl(174, 30%, 20%), hsl(180, 30%, 25%));
+}
+
+.dark .bg-gradient-to-br.from-violet-50.to-purple-100 {
+  background: linear-gradient(to bottom right, hsl(262, 30%, 20%), hsl(280, 30%, 25%));
+}
+
+.dark .bg-gradient-to-br.from-pink-50.to-red-100 {
+  background: linear-gradient(to bottom right, hsl(350, 30%, 20%), hsl(0, 30%, 25%));
+}
+
+.dark .bg-gradient-to-br.from-amber-50.to-yellow-100 {
+  background: linear-gradient(to bottom right, hsl(45, 30%, 20%), hsl(50, 30%, 25%));
+}
+
+.dark .bg-gradient-to-br.from-green-50.to-emerald-100 {
+  background: linear-gradient(to bottom right, hsl(142, 30%, 20%), hsl(160, 30%, 25%));
+}
+
+.dark .bg-gradient-to-r.from-orange-50.to-amber-50 {
+  background: linear-gradient(to right, hsl(24, 30%, 20%), hsl(36, 30%, 20%));
+}
+
+.dark .bg-gradient-to-r.from-cyan-50.to-teal-50 {
+  background: linear-gradient(to right, hsl(174, 30%, 20%), hsl(180, 30%, 20%));
+}
+
+.dark .bg-gradient-to-r.from-violet-50.to-purple-50 {
+  background: linear-gradient(to right, hsl(262, 30%, 20%), hsl(280, 30%, 20%));
+}
+
+/* Dark mode text colors for better visibility */
+.dark .text-muted-foreground {
+  color: hsl(0, 0%, 75%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Colorful borders */
+.border-gradient-primary {
+  border-image: linear-gradient(to right, hsl(24, 100%, 50%), hsl(36, 100%, 50%)) 1;
+}
+
+.border-gradient-secondary {
+  border-image: linear-gradient(to right, hsl(174, 75%, 40%), hsl(180, 75%, 45%)) 1;
+}
+
+.border-gradient-accent {
+  border-image: linear-gradient(to right, hsl(262, 83%, 58%), hsl(280, 83%, 58%)) 1;
+}
+
+/* Tagline animation */
+@keyframes tagline-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 125, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 125, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 125, 0, 0.2);
+  }
+}
+
+.tagline-highlight {
+  animation: tagline-glow 3s infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 125, 0, 0.1) 0%,
+    rgba(174, 75, 40, 0.1) 50%,
+    rgba(262, 83, 58, 0.1) 100%
+  );
+}
